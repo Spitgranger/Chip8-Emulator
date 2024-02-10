@@ -526,7 +526,8 @@ void Chip8::OP_Dxyn()
         for (unsigned int col = 0; col < 8; ++col)
         {
             uint8_t spritePixel = spriteByte & (0x80u >> col);
-            uint32_t* screenPixel = &video[(yPos + row) * VIDEO_WIDTH + (xPos + col)];
+            uint32_t* screenPixel =
+                &video[(yPos + row) * VIDEO_WIDTH + (xPos + col)];
 
             // Sprite pixel is on
             if (spritePixel)
